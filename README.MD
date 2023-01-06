@@ -107,7 +107,6 @@
     iface enp0s3 inet6 auto
 
 ### ssh connection
-
     ssh <server-user>@<server IP address> -p <ssh-port>
     exit
 
