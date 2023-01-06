@@ -32,7 +32,7 @@
     ./sudo_config.sh
 
 # AppArmor
-> 
+>
 
     sudo aa-status  //apparmor status
 
@@ -64,7 +64,10 @@
 
 ### Alter port for 4242
 
-    wget 
+    sudo wget https://raw.githubusercontent.com/ThreeDP/Born2BeRoot/main/ssh_config.sh
+    sudo chmod 744 ssh_config.sh
+    sudo ./ssh_config.sh
+    
 
 
 
