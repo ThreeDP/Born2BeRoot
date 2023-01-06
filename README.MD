@@ -112,7 +112,8 @@
 
 # Password config
 
-    
+    sudo apt-get install libpam-pwquality - y
+    sudo wget https://raw.githubusercontent.com/ThreeDP/Born2BeRoot/main/pass_config.sh
 
 
 and activate TTY to stop malicious software from giving itself root privileges

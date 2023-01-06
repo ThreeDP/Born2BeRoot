@@ -5,12 +5,12 @@ sudo sed -i 's/PASS_WARN_AGE\t7/PASS_MAX_DAYS\t30\nPASS_MIN_DAYS\t2\nPASS_WARN_A
 sudo chage -M 30 dapaulin && sudo chage -M 30 root
 sudo chage -m 2 dapaulin && sudo chage -m 2 root
 sudo chage -W 7 dapaulin && sudo chage -W 7 root
-sudo apt-get install libpam-pwquality &&
-sudo sed -i 's/#difok = \([0-9]\{1,\}\)/difok = 7/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#minlen = \([0-9]\{1,\}\)/minlen = 10/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#dcredit = \([0-9]\{1,\}\)/dcredit = -1/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#ucredit = \([0-9]\{1,\}\)/ucredit = -1/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#maxrepeat = \([0-9]\{1,\}\)/maxrepeat = 3/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#usercheck = \([0-9]\{1,\}\)/usercheck = 1/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/#retry = \([0-9]\{1,\}\)/retry = 3/g' /etc/security/pwquality.conf &&
-
+sudo sed -i 's/# difok = \([0-9]\{1,\}\)/difok = 7/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# minlen = \([0-9]\{1,\}\)/minlen = 10/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# dcredit = \([0-9]\{1,\}\)/dcredit = -1/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# ucredit = \([0-9]\{1,\}\)/ucredit = -1/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# lcredit = \([0-9]\{1,\}\)/ucredit = -1/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# maxrepeat = \([0-9]\{1,\}\)/maxrepeat = 3/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# usercheck = \([0-9]\{1,\}\)/usercheck = 1/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# retry = \([0-9]\{1,\}\)/retry = 3/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# enforce_for_root/enforce_for_root/g' /etc/security/pwquality.conf
