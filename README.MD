@@ -110,7 +110,9 @@
     ssh <server-user>@<server IP address> -p <ssh-port>
     exit
 
+# Password config
 
+    
 
 
 and activate TTY to stop malicious software from giving itself root privileges
