@@ -1,7 +1,7 @@
 #!/bin/bash
-sudo sed -i 's/PASS_MAX_DAYS/#PASS_MAX_DAYS/g' /etc/login.defs &&
-sudo sed -i 's/PASS_MIN_DAYS/#PASS_MIN_DAYS/g' /etc/login.defs &&
-sudo sed -i 's/PASS_WARN_AGE\t7/PASS_MAX_DAYS\t30\nPASS_MIN_DAYS\t2\nPASS_WARN_AGE\t7/g' /etc/login.defs &&
+sudo sed -i 's/PASS_MAX_DAYS\t\([0-9]\{1,\}\)/PASS_MAX_DAYS\t30/g' /etc/login.defs &&
+sudo sed -i 's/PASS_MIN_DAYS\t\([0-9]\{1,\}\)/PASS_MIN_DAYS\t2/g' /etc/login.defs &&
+sudo sed -i 's/PASS_WARN_AGE\t\([0-9]\{1,\}\)/PASS_WARN_AGE\t7/g' /etc/login.defs 
 sudo chage -M 30 dapaulin && sudo chage -M 30 root
 sudo chage -m 2 dapaulin && sudo chage -m 2 root
 sudo chage -W 7 dapaulin && sudo chage -W 7 root
