@@ -69,6 +69,48 @@
     sudo ./ssh_config.sh
     
 
+### Removig internet socket
+
+    sudo apt-get install net-tools -y
+    ifconfig -a
+
+> use to get infos of network interface, IP address and netmask
+
+    route -n
+
+> use to get info of gateway
+
+### alter network interface auto for static
+
+    sudo vim /etc/network/interfaces
+    // alter in the file
+    # The primary network interface IPv
+    allow-hotplug <network interface>
+    iface <network interface> inet static
+        address <IP address>
+        netmask <netmask>
+        gateway <gateway>
+    # the primary network interface IPv6
+    iface <network interface> inet6 auto
+
+    sudo systemctl reboot
+
+**example:**
+ 
+    # The primary network interface IPv
+    allow-hotplug enp0s3
+    iface enp0s3 inet static
+        address 10.11.200.247
+        netmask 255.255.0.0
+        gateway 10.11.254.254
+    # the primary network interface IPv6
+    iface enp0s3 inet6 auto
+
+### ssh connection
+
+    ssh <server-user>@<server IP address> -p <ssh-port>
+    exit
+
 
 
 
