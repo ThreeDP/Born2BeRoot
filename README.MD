@@ -114,7 +114,47 @@
 
     sudo apt-get install libpam-pwquality - y
     sudo wget https://raw.githubusercontent.com/ThreeDP/Born2BeRoot/main/pass_config.sh
+    sudo chmod 744 pass_config.sh
+    sudo ./pass_config.sh
+    sudo passwd dapaulin
+    sudo passwd root
 
+### pass testings
+
+    1234
+    U1234
+    G0123456789
+    G01TY0967WR
+    Goooogle1997
+    dapaulin1997D
+    42Davy42$1997   // root
+
+    Born2BeRoot97   // dapaulin
+
+# Hostname and New User and Groups
+
+    // Change hostname and view new hostname
+    sudo hostnamectl set-hostname <new_hostname>
+    hostnamectl status
+
+    // User admin
+    useradd : create new user
+    usermod : change user params
+        -l for username,
+        -c for full name,
+        -g for groups
+    userdel -r : deletes a user and all associated files.
+    id -u : display user ID
+    users : shows users list
+
+    // groups admin
+    groupadd : creates a new group.
+    gpasswd -a : adds a user to a group.
+    gpasswd -d : removes a user from a group.
+    groupdel : deletes a group.
+    groups : displays the groups of a user.
+    id -g : shows a user’s main group ID.
+    getent group : displays a list of all users in a group.
 
 and activate TTY to stop malicious software from giving itself root privileges
 via sudo.

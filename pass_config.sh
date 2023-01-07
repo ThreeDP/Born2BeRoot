@@ -9,8 +9,9 @@ sudo sed -i 's/# difok = \([0-9]\{1,\}\)/difok = 7/g' /etc/security/pwquality.co
 sudo sed -i 's/# minlen = \([0-9]\{1,\}\)/minlen = 10/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# dcredit = \([0-9]\{1,\}\)/dcredit = -1/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# ucredit = \([0-9]\{1,\}\)/ucredit = -1/g' /etc/security/pwquality.conf &&
-sudo sed -i 's/# lcredit = \([0-9]\{1,\}\)/ucredit = -1/g' /etc/security/pwquality.conf &&
+sudo sed -i 's/# lcredit = \([0-9]\{1,\}\)/lcredit = -1/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# maxrepeat = \([0-9]\{1,\}\)/maxrepeat = 3/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# usercheck = \([0-9]\{1,\}\)/usercheck = 1/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# retry = \([0-9]\{1,\}\)/retry = 3/g' /etc/security/pwquality.conf &&
 sudo sed -i 's/# enforce_for_root/enforce_for_root/g' /etc/security/pwquality.conf
+sudo rm pass_config.sh
