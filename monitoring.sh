@@ -25,6 +25,12 @@ IP=`hostname -I | awk '{print $1}'`
 MAC=`ip link show | grep link/ether | awk '{print $2}'`
 SU=`grep COMMAND /var/log/sudo/sudo.log | wc -l`
 
+MIN=$(uptime -s | cut -d ":" -f 2)
+SEC=$(uptime -s | cut -d ":" -f 3)
+DELAY=$(bc <<< $MIN%10*60+$SEC)
+sleep $DELAY
+
+
 echo -e "#Architecture: "$ARC
 echo -e "#CPU physical: "$CPU
 echo -e "#vCPU: "$VCPU

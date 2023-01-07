@@ -156,6 +156,19 @@
     id -g : shows a user’s main group ID.
     getent group : displays a list of all users in a group.
 
+# Monitoring config
+
+    su -
+    cd /root/
+    wget https://raw.githubusercontent.com/ThreeDP/Born2BeRoot/main/monitoring.sh
+    chmod 777 monitoring.sh
+
+# Config Cron
+
+    systemctl enable cron
+    echo -e '\n*/10 * * * * bash /root/monitoring.sh | wall' >> /var/spool/cron/crontabs/root
+    
+
 and activate TTY to stop malicious software from giving itself root privileges
 via sudo.
 
