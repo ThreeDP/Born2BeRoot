@@ -165,9 +165,12 @@
 
 # Config Cron
 
+    su -
     systemctl enable cron
+    apt-get install bc -y
     echo -e '\n*/10 * * * * bash /root/monitoring.sh | wall' >> /var/spool/cron/crontabs/root
-    
+    sed -i 's/\*\/10 \* \* \* \*/\*\/10 \* \* \*/g' /var/spool/cron/crontabs/root
+
 
 and activate TTY to stop malicious software from giving itself root privileges
 via sudo.
